@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Details Page</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+	<script type="text/javascript" src="{% static 'js/bootstarp.min.js' %}"></script>
+</head>
+<body>
+<div class="container">
+	<div class="row justify-content-center">
+		<div class="col-sm-8">
+			<div class="card">
+			<div class="card-header">
+				Students Details
+			</div>
+			<div class="card-body">
+				<table class="table table-striped responsive ">
+	{% for row in data %}
+		<tr>
+			<td>{{row.id}}</td>
+			<td>{{row.stuid}}</td>
+			<td><a href="{% url 'edit' row.id %}">{{row.stuName}}</a></td>
+			<td>{{row.branch}}</td>
+			<td>{{row.age}}</td>
+			<td><a class='btn btn-info'href="{%url 'delete' row.id %}">Delete</a></td>
+		</tr>
+	{% endfor %}
+</table>
+			</div>
+		</div>
+		</div>
+	</div>
+</div>
+</body>
+</html>

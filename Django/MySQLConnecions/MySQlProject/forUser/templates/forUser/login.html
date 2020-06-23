@@ -1,0 +1,9 @@
+{% extends 'forUser/base.html' %}
+{% block title %}Home Page{% endblock title%}
+{%block content%}
+	<form method="POST" action="">
+		{% csrf_token %}
+		{{ form }}
+		<input type="submit" name="login" value="login">
+	</form>
+{%endblock content%}

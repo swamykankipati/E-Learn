@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Show All</title>
+</head>
+<body>
+	<table border="1">
+		{% for row in data %}
+			<tr>
+			<td>{{row.fullname}}</td>
+			<td><a href="{% url 'profile' row.id %}">profile</a></td>
+		</tr>
+		{% endfor %}
+	</table>
+</body>
+</html>

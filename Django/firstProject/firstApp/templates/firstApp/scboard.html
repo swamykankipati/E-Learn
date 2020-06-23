@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Score Board</title>
+</head>
+<body>
+	<h3>Score Board</h3>
+	<form action="{% url 'scboard' %}" method="POST">
+		{% csrf_token  %}
+		{% if t1val is None %}
+		<input type="text" name="t1val" value="0" readonly="">
+		{%else%}
+		<input type="text" name="t1val" value="{{ t1val }}" readonly="">
+		{% endif %}
+		<input type="submit" name="team1" value="Team1">
+
+
+		{% if t2val is None %}
+		<input type="text" name="t2val" value="0" readonly="">
+		{% else %}
+		<input type="text" name="t2val" value="{{ t2val }}" readonly="">
+		{% endif %}
+		<input type="submit" name="team2" value="Team2">
+	</form>
+</body>
+</html>
